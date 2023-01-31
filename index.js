@@ -1,24 +1,24 @@
 
 const slider = document.querySelector(".items");
 const slides = document.querySelectorAll(".item");
-const button = document.querySelectorAll(".button");
+const btn = document.querySelectorAll(".button");
 
 let atual = 0;
 let prev = 2;
-let next = 1;
+let prox = 1;
 
-for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoprox());
 }
 
 const gotoPrev = () => atual > 0 ? gotoNum(atual - 1) : gotoNum(slides.length - 1);
 
-const gotoNext = () => atual < 2 ? gotoNum(atual + 1) : gotoNum(0);
+const gotoprox = () => atual < 2 ? gotoNum(atual + 1) : gotoNum(0);
 
 const gotoNum = number => {
     atual = number;
     prev = atual - 1;
-    next = atual + 1;
+    prox = atual + 1;
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
@@ -26,8 +26,8 @@ const gotoNum = number => {
         slides[i].classList.remove("next");
     }
 
-    if (next == 3) {
-        next = 0;
+    if (prox == 3) {
+        prox = 0;
     }
 
     if (prev == -1) {
@@ -36,5 +36,5 @@ const gotoNum = number => {
 
     slides[atual].classList.add("active");
     slides[prev].classList.add("prev");
-    slides[next].classList.add("next");
+    slides[prox].classList.add("next");
 }
