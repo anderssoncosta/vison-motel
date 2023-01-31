@@ -163,9 +163,8 @@ p{
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     top: 100%;
-    flex-direction: column;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -335,6 +334,8 @@ p{
 }
 
 .img-motel{
+    right: 10px;
+    position: relative;
     width: 568px;
     height: 512px;
     display: flex;
@@ -393,6 +394,7 @@ p{
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    margin-bottom: 15px
 }
 
 .container-localizacao{
